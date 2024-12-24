@@ -60,7 +60,7 @@ for i =1:n_patients
                 [xx, yy, zz, tt]= size(raw_data);
                 raw_data = reshape(raw_data, [xx*yy*zz, tt]);
                 
-                parc_series = averageROI_Surface(raw_data, size(atlas), atlas_cell, n_parc); %avg roi
+                parc_series = averageROI_Volume(raw_data, size(atlas), atlas_cell, n_parc); %avg roi
                 f_data = myfilt(parc_series); %filter
                 proc_data = zscore(f_data')'; %last normalize
 
